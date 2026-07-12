@@ -8,6 +8,9 @@ echo "=================================="
 # Add uv to PATH
 export PATH="/root/.local/bin:$HOME/.local/bin:$PATH"
 
+# Set memory optimizations
+export PYTHONMALLOC=malloc
+
 # Check if uv is installed
 if ! command -v uvx &> /dev/null; then
     echo "Installing uv..."

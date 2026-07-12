@@ -1,19 +1,13 @@
 # OpenHands Self-Hosted Dockerfile
-# For deploying on Render or any Docker-compatible platform
+# Optimized for Render Free Tier
 
 FROM node:22-slim
 
-# Install system dependencies
+# Install minimal dependencies
 RUN apt-get update && apt-get install -y \
     curl \
     git \
     ca-certificates \
-    gnupg \
-    nginx \
-    certbot \
-    python3-certbot-nginx \
-    python3-pip \
-    tmux \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv (Python package manager required by agent-canvas)
@@ -28,16 +22,19 @@ WORKDIR /app
 
 # Copy startup scripts
 COPY scripts/startup.sh /app/startup.sh
-COPY scripts/nginx.conf /etc/nginx/sites-available/canvas
 
 # Make scripts executable
 RUN chmod +x /app/startup.sh
 
+# Set memory limit hint for Python
+ENV PYTHONMALLOC=malloc
+ENV UV_LINK_MODE=copy
+
 # Expose ports
-EXPOSE 8000 80 443
+EXPOSE 8000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
 # Run startup script
