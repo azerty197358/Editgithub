@@ -1,0 +1,28 @@
+# OpenHands Worker Dockerfile
+# For background task processing
+
+FROM node:22-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js tools globally
+RUN npm install -g @openhands/agent-canvas
+
+# Create application directory
+WORKDIR /app
+
+# Environment variables
+ENV NODE_ENV=production
+ENV WORKER_MODE=true
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Run in worker mode
+CMD ["agent-canvas", "--worker"]

@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+README.md
+LICENSE
+
+# Environment files
+.env
+.env.*
+.env.example
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data directories
+data/
+workspace/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node
+node_modules/
+
+# Docker
+docker-compose*.yml
+Dockerfile*
+.dockerignore

@@ -1,0 +1,49 @@
+# Render Blueprint for OpenHands Self-Hosted
+# Deploy this on Render: https://render.com/deploy?repo=https://github.com/YOUR_USERNAME/openhands-self-hosted
+
+services:
+  - type: web
+    name: openhands
+    env: docker
+    region: oregon  # Change to your preferred region
+    plan: starter  # Use "starter" for free tier, or upgrade for production
+    
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8000
+      - key: LOCAL_BACKEND_API_KEY
+        generateValue: true
+      - key: AGENT_CANVAS_MODE
+        value: full  # Options: full, backend-only
+      - key: PUBLIC_URL
+        fromService:
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+
+    # Auto-deploy from main branch
+    autoDeploy: true
+
+  # Optional: Background worker for long-running tasks
+  - type: worker
+    name: openhands-worker
+    env: docker
+    region: oregon
+    plan: starter
+    
+    dockerfilePath: ./Dockerfile.worker
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WORKER_MODE
+        value: "true"
+
+# Redirects (optional)
+redirects:
+  - from: /
+    to: /:8000
+    status: 200
