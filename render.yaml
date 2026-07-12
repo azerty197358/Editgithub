@@ -22,7 +22,7 @@ services:
         value: full  # Options: full, backend-only
       - key: PUBLIC_URL
         fromService:
-          type: web
+          name: openhands
           envVarKey: RENDER_EXTERNAL_URL
 
     # Auto-deploy from main branch
