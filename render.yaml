@@ -42,8 +42,4 @@ services:
       - key: WORKER_MODE
         value: "true"
 
-# Redirects (optional)
-redirects:
-  - from: /
-    to: /:8000
-    status: 200
+
