@@ -1,8 +1,12 @@
-# 🤖 مساعد الذكاء الاصطناعي الخاص بك
+# 🤖 DevMind - مساعد الذكاء الاصطناعي للمطورين
 
 <div align="center">
 
-**مساعد ذكاء اصطناعي بسيط وسريع - يعمل مع أي نموذج**
+**مساعد ذكاء اصطناعي بسيط وسريع - يقرأ ويعدل الأكواد ويصلح الأخطاء**
+
+![DevMind](https://img.shields.io/badge/DevMind-AI%20Assistant-blue)
+![Python](https://img.shields.io/badge/Python-3.8+-green)
+![License](https://img.shields.io/badge/License-MIT-purple)
 
 </div>
 
