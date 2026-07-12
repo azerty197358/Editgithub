@@ -4,9 +4,7 @@
 
 **مساعد ذكاء اصطناعي بسيط وسريع - يقرأ ويعدل الأكواد ويصلح الأخطاء**
 
-![DevMind](https://img.shields.io/badge/DevMind-AI%20Assistant-blue)
-![Python](https://img.shields.io/badge/Python-3.8+-green)
-![License](https://img.shields.io/badge/License-MIT-purple)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/azerty197358/Editgithub)
 
 </div>
 
@@ -21,6 +19,7 @@
 - 📝 يعدل الأكواد ويطورها
 - 🔑 مفتاحك الخاص - بياناتك آمنة
 - 🆓 **3 نماذج مجانية 100%**
+- 🚀 **النشر في دقيقة واحدة على Render!**
 
 ---
 
@@ -30,144 +29,44 @@
 
 | # | النموذج | الوصف | التكلفة |
 |---|--------|-------|--------|
-| 1 | **Claude 3.5 Sonnet** | ⭐ الأسرع والأذكى - ممتاز للبرمجة | ~$0.003/1K token |
-| 2 | **GPT-4 Turbo** | قوي جداً - دعم العربية | ~$0.01/1K token |
+| 1 | **Claude 3.5 Sonnet** | ⭐ الأسرع والأذكى | ~$0.003/1K token |
+| 2 | **GPT-4 Turbo** | قوي جداً | ~$0.01/1K token |
 | 3 | **Gemini Pro** | جيد ومتوازن | حد مجاني |
 
 ### 🆓 نماذج مجانية 100%
 
 | # | النموذج | الوصف | التكلفة |
 |---|--------|-------|--------|
-| 4 | **Gemini 2.0 Flash** | ⭐ **الأفضل مجاناً!** - سريع جداً | 🆓 1.5M token/دقيقة |
-| 5 | **Groq Llama 70B** | سريع جداً - Llama 3.1 | 🆓 30 طلب/دقيقة |
-| 6 | **Ollama محلي** | Llama3/Mistral على جهازك | 🆓 مجاني 100% |
+| 4 | **Gemini 2.0 Flash** | ⭐ **الأفضل مجاناً!** | 🆓 مجاني |
+| 5 | **Groq Llama 70B** | سريع جداً | 🆓 مجاني |
+| 6 | **Ollama محلي** | على جهازك | 🆓 مجاني 100% |
 
 ---
 
-## 🚀 التشغيل في 3 خطوات
+## 🚀 النشر على Render (دقيقة واحدة!)
 
-### الخطوة 1: ثبّت Python
+### 1️⃣ انشر مباشرة:
 
-حمّل Python من: https://www.python.org/downloads/
+اضغط الزر الأزرق → **Connect** → **Deploy!**
 
-**أثناء التثبيت:** اضغط ✅ Add Python to PATH
+### 2️⃣ أو يدوياً:
+
+1. افتح: **https://render.com**
+2. اضغط **"New +"** → **"Blueprint"**
+3. اربط مستودع GitHub
+4. اضغط **"Apply"**
 
 ---
 
-### الخطوة 2: ثبّت المكتبات
+## 💻 التشغيل محلياً
+
+### مع Docker:
 
 ```bash
-cd C:\path\to\Editgithub
-pip install openhands-sdk openhands-tools
+git clone https://github.com/azerty197358/Editgithub.git
+cd Editgithub
+docker-compose up -d
 ```
-
----
-
-### الخطوة 3: شغّل البرنامج!
-
-```bash
-python assistant.py
-```
-
----
-
-## 📖 طريقة الاستخدام
-
-```
-============================================================
-🤖 DevMind - مساعد الذكاء الاصطناعي للمطورين
-============================================================
-
-اختر نموذج الذكاء الاصطناعي:
-
-📌 نماذج مدفوعة:
-  1. Anthropic (Claude 3.5 Sonnet) ⭐ - الأسرع والأذكى
-  2. OpenAI (GPT-4 Turbo) - قوي جداً
-  3. Google (Gemini Pro) - جيد ومتوازن
-
-🆓 نماذج مجانية:
-  4. Google Gemini (مجاني) - Gemini 2.0 Flash ⭐
-  5. Groq (مجاني) - Llama/Mixtral سريع جداً
-  6. Ollama (محلي) - Llama3/Mistral مجاني 100%
-
-اختيارك (1-6): 4
-
-🔑 أدخل Google AI API Key (مجاني): xxxxx
-
-✅ تم اختيار: GOOGLE - gemini-2.0-flash-exp
-💰 التكلفة: 🆓 مجاني (1.5M token/دقيقة)
-
-============================================================
-🎯 ابدأ المحادثة! (اكتب 'خروج' للإنهاء)
-============================================================
-
-👤 أنت: عدّل هذا الملف واصلح الأخطاء
-
-🤖 DevMind يفكر... ⏳
-
-🤖 DevMind: تم إصلاح الملف بنجاح!
-
-👤 أنت: خروج
-👋 مع السلامة! شكراً لاستخدام DevMind!
-```
-
----
-
-## 🔑 الحصول على مفاتيح API
-
-### 1. Claude (Anthropic) - المدفوع
-1. اذهب إلى: https://console.anthropic.com/
-2. سجل دخول أو أنشئ حساب
-3. من Dashboard، انسخ API Key
-
-### 2. GPT-4 (OpenAI) - المدفوع
-1. اذهب إلى: https://platform.openai.com/
-2. سجل دخول أو أنشئ حساب
-3. من API Keys، أنشئ مفتاح جديد
-
-### 3. Gemini (Google) - 🆓 مجاني!
-1. اذهب إلى: https://aistudio.google.com/
-2. سجل دخول بحساب Google
-3. من API Keys، أنشئ مفتاح جديد **مجاني!**
-
-### 4. Groq - 🆓 مجاني!
-1. اذهب إلى: https://console.groq.com/
-2. سجل دخول (حساب Google كافي)
-3. من API Keys، أنشئ مفتاح جديد **مجاني!**
-
-### 5. Ollama - 🆓 مجاني 100%!
-1. حمّل من: https://ollama.ai/
-2. ثبّته على جهازك
-3. لا يحتاج مفتاح API!
-
----
-
-## 💰 مقارنة التكلفة
-
-| النموذج | التكلفة | الحد |
-|--------|--------|------|
-| Claude 3.5 Sonnet | $0.003/1K token | غير محدود |
-| GPT-4 Turbo | $0.01/1K token | غير محدود |
-| Gemini 2.0 Flash | **🆓 مجاني** | 1.5M token/دقيقة |
-| Groq Llama 70B | **🆓 مجاني** | 30 طلب/دقيقة |
-| Ollama محلي | **🆓 مجاني** | غير محدود |
-
----
-
-## 🆘 المشاكل الشائعة
-
-### خطأ: "python not recognized"
-- أعد تثبيت Python مع勾 Add to PATH
-
-### خطأ: "Module not found"
-- شغّل: `pip install openhands-sdk openhands-tools`
-
-### بطء في الرد
-- استخدم **Gemini 2.0 Flash** أو **Groq** (مجاني وسريع)
-
-### خطأ مع Ollama
-- تأكد من تثبيت Ollama: https://ollama.ai/
-- شغّل: `ollama pull llama3.2`
 
 ---
 
@@ -175,21 +74,14 @@ python assistant.py
 
 ```
 DevMind/
-├── assistant.py       # الملف الرئيسي
-├── requirements.txt   # المكتبات المطلوبة
-├── start.bat          # تشغيل مباشر (Windows)
-└── README.md         # هذا الملف
+├── Dockerfile           # للنشر على Render
+├── render.yaml         # تكوين Render
+├── docker-compose.yml  # للاختبار المحلي
+├── assistant.py        # البرنامج الرئيسي
+├── requirements.txt    # المكتبات
+└── README.md          # هذا الملف
 ```
 
 ---
 
-## 🔒 الأمان
-
-- ✅ البيانات تُعالج على خوادم النماذج فقط
-- ✅ مفتاحك الخاص لا يُشارك مع أحد
-- ✅ الملفات تُنشأ في مجلد `~/DevMind_Workspace`
-- ✅ يعمل محلياً على جهازك
-
----
-
-**صُنع بواسطة AI 🤖 - للاستخدام الشخصي**
+**صُنع بواسطة AI 🤖**
