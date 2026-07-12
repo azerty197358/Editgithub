@@ -5,6 +5,19 @@ echo "=================================="
 echo "Starting OpenHands Agent Canvas"
 echo "=================================="
 
+# Add uv to PATH
+export PATH="/root/.local/bin:$HOME/.local/bin:$PATH"
+
+# Check if uv is installed
+if ! command -v uvx &> /dev/null; then
+    echo "Installing uv..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="/root/.local/bin:$HOME/.local/bin:$PATH"
+fi
+
+# Verify uv is available
+echo "uv version: $(uv --version 2>/dev/null || echo 'not found')"
+
 # Check if API key is set
 if [ -z "$LOCAL_BACKEND_API_KEY" ]; then
     echo "WARNING: LOCAL_BACKEND_API_KEY not set. Generating a random key..."

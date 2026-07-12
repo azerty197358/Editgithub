@@ -12,8 +12,13 @@ RUN apt-get update && apt-get install -y \
     nginx \
     certbot \
     python3-certbot-nginx \
+    python3-pip \
     tmux \
     && rm -rf /var/lib/apt/lists/*
+
+# Install uv (Python package manager required by agent-canvas)
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/root/.local/bin:$PATH"
 
 # Install Node.js tools globally
 RUN npm install -g @openhands/agent-canvas
