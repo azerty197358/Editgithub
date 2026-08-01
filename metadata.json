@@ -1,0 +1,6 @@
+{
+  "name": "OpenCode",
+  "description": "Browser-based AI coding assistant with GitHub integration",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
