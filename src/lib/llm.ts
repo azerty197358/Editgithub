@@ -161,12 +161,16 @@ function prepareGemini(messages: ChatMessage[], s: Settings): PreparedRequest {
     merged.unshift({ role: 'user', parts: [{ text: 'Continue.' }] });
   }
 
-  const body: Record<string, unknown> = { contents: merged };
-  if (sys) body.systemInstruction = { parts: [{ text: sys.content }] };
+  const geminiBody: Record<string, unknown> = { contents: merged };
+  if (sys) geminiBody.systemInstruction = { parts: [{ text: sys.content }] };
   return {
-    url: `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${s.geminiKey}`,
+    url: '/api/gemini/stream',
     headers: { 'Content-Type': 'application/json' },
-    body,
+    body: {
+      apiKey: s.geminiKey,
+      model,
+      body: geminiBody,
+    },
   };
 }
 
@@ -198,7 +202,6 @@ function prepare(messages: ChatMessage[], s: Settings): PreparedRequest {
 
 export function validateSettings(s: Settings): string | null {
   if (s.provider === 'openrouter' && !s.openrouterKey) return 'OpenRouter API key is required.';
-  if (s.provider === 'gemini' && !s.geminiKey) return 'Google AI Studio API key is required.';
   if (s.provider === 'ollama' && !s.ollamaBaseUrl) return 'Ollama base URL is required.';
   return null;
 }
