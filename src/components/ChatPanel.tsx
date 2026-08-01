@@ -248,6 +248,11 @@ export function ChatPanel({ repo, onNeedSettings }: Props) {
   function stop() {
     abortRef.current?.abort();
     setBusy(false);
+    messages.forEach((m) => {
+      if (m.pending) {
+        update(m.id, { pending: false, content: m.content ? m.content + '\n\n*(Generation stopped by user)*' : '*(Generation stopped by user)*' });
+      }
+    });
   }
 
   return (
